@@ -1,0 +1,12 @@
+
+<ul nz-menu [nzMode]="isCollapsed?'vertical':'inline'"  style="height:100%">
+    <li nz-submenu *ngFor="let programGroup of programGroups | async">
+      <span title><i class="anticon anticon-{{programGroup.IconName}} "></i>{{programGroup.DisplayName}}</span>
+      <ul>
+        <li  nz-menu-item *ngFor="let program of programGroup.Programs">
+          <a routerLink="{{program.Location}}"><i class="anticon anticon-{{program.IconName}} "></i>{{program.DisplayName}}</a> 
+        </li> 
+      </ul>
+    </li>
+</ul>
+ 

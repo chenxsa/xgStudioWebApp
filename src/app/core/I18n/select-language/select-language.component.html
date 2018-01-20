@@ -1,0 +1,10 @@
+<nz-dropdown>
+  <a class="ant-dropdown-link" nz-dropdown>
+    {{selectedLang.Name}}} <i class="anticon anticon-down"></i>
+  </a>
+  <ul nz-menu >
+    <li nz-menu-item *ngFor="let lang of languages">
+      <a rel="noopener noreferrer" (click)="changedLang(lang)" >{{lang.Name}}</a>
+    </li> 
+  </ul>
+</nz-dropdown>

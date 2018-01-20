@@ -1,0 +1,33 @@
+<nz-layout class="layout" id="app" [@routeAnimation]="routerStateCode">
+    <!-- 头部 -->
+    <nz-header>
+        <app-head class="header"></app-head>
+    </nz-header>
+    <nz-content>
+    <!-- 中部 -->
+        <nz-layout>
+            <!-- 左侧导航 -->
+            <nz-sider [nzWidth]="200" [(nzCollapsed)]="isCollapsed" style="background:#fff">
+                <app-program-tree [(isCollapsed)]="isCollapsed"></app-program-tree>
+            </nz-sider>
+              <!-- 内容-->
+            <nz-content> 
+                        <nz-tabset [nzType]="'card'" style="background:#fff ;height:100%">
+                            <nz-tab *ngFor="let tab of tabs">
+                                <ng-template #nzTabHeading>
+                                    <div>
+                                        {{tab.name}}
+                                        <i class="anticon anticon-cross" (click)="closeTab(tab)"></i>
+                                    </div>
+                                </ng-template>
+                                <span>Content of {{tab.name}}</span>
+                            </nz-tab>
+                            <ng-template #nzTabBarExtraContent>
+                                <i class="ant-tabs-new-tab anticon anticon-plus" (click)="newTab()"></i>
+                            </ng-template>
+                        </nz-tabset> 
+            </nz-content> 
+        </nz-layout>
+    </nz-content>
+    <nz-footer style="text-align: center;">xgstudio Design ©2018 Implement By <a href="https://angular.io/">Angular</a>&& <a href="https://ng.ant.design/">NG-ZORRO</a></nz-footer>
+</nz-layout>

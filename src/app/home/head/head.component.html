@@ -1,0 +1,37 @@
+
+        <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+                <li nz-menu-item>
+                        <div nz-col [nzSpan]="3">
+                                <a [routerLink]="['/']">
+                                        <img src="../../../assets/img/logo-color.svg"  style="max-height: 40px; vertical-align: middle"
+                                        /> 西瓜工作室
+                                </a>
+                        </div>
+                </li>
+                <li nz-menu-item style="width: 200px;">
+                        <app-program-search></app-program-search>
+                </li>
+                <li nz-menu-item >
+                        <app-opened-programs></app-opened-programs>
+                </li>
+                <li nz-menu-item>
+                        <nz-dropdown [nzClickHide]="false" [(nzVisible)]="visible">
+                                <a class="ant-dropdown-link" nz-dropdown>
+                                        我收藏的作业
+                                        <i class="anticon anticon-down"></i>
+                                </a>
+
+                                <ul nz-menu>
+                                        <li nz-menu-item>订单</li>
+                                        <li nz-menu-item>作业权限</li>
+                                        <li nz-menu-item (click)="visible = false">
+                                                <i class=" anticon anticon-close "></i>
+                                                关闭</li>
+                                </ul>
+
+                        </nz-dropdown>
+                </li>
+                <li>
+                        <head-notify></head-notify>
+                </li>
+        </ul> 

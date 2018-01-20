@@ -1,0 +1,9 @@
+ 
+<nz-select  style="width:100%" 
+    [nzPlaceHolder]="'搜索所有作业'" 
+    [nzFilter]="false" [(ngModel)]="selectedOption"
+    (nzSearchChange)="searchChange($event)" [nzNotFoundContent]="'无法找到'" nzShowSearch>
+    <nz-option *ngFor="let option of searchOptions" [nzLabel]="option.DisplayName" [nzValue]="option">
+            <ng-template #nzOptionTemplate><i class="anticon" [ngClass]="'anticon-'+option.IconName"></i> {{ "("+option.ID+")"+option.Location+"-"+ option.DisplayName}}</ng-template>
+    </nz-option> 
+</nz-select>
