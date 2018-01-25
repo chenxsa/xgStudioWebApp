@@ -13,7 +13,8 @@
 4、安装mock
 >npm install json-server -g 
 
-5、克隆或者下载所有文件到本地目录
+5、克隆或者下载所有文件到本地目录
+
 6、在[根目录\mock]
 >如果是windows执行运行批处理cmd.bat;
 >如果是mac，使用终端,切换到【本目录\mock】下执行：npm run mock
